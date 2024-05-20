@@ -17,10 +17,19 @@ function QuestionForm(props) {
     });
   }
 
-  function handleSubmit(event) {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(formData);
-  }
+    props.onSubmit(formData);
+    // Clear form after submission
+    setFormData({
+      prompt: "",
+      answer1: "",
+      answer2: "",
+      answer3: "",
+      answer4: "",
+      correctIndex: 0,
+    });
+  };
 
   return (
     <section>
