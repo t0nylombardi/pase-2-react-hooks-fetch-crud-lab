@@ -1,7 +1,8 @@
 import React from "react";
 import QuestionItem from "./QuestionItem";
 
-function QuestionList({ questions, onDelete, onUpdateCorrectAnswer }) {
+const QuestionList = ({ questions, onDelete, onUpdateCorrectAnswer }) => {
+  console.log('questions:', questions);
   return (
     <section>
       <h1>Quiz Questions</h1>

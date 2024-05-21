@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function QuestionForm(props) {
+const QuestionForm = (props) => {
   const [formData, setFormData] = useState({
     prompt: "",
     answer1: "",
@@ -10,16 +10,17 @@ function QuestionForm(props) {
     correctIndex: 0,
   });
 
-  function handleChange(event) {
+  const handleChange = (event) => {
     setFormData({
       ...formData,
       [event.target.name]: event.target.value,
     });
   }
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     props.onSubmit(formData);
+
     // Clear form after submission
     setFormData({
       prompt: "",
@@ -29,11 +30,11 @@ function QuestionForm(props) {
       answer4: "",
       correctIndex: 0,
     });
-  };
+  }
 
   return (
     <section>
-      <h1>New Question</h1>
+      <h1>Add New Question</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Prompt:
